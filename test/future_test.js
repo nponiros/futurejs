@@ -1,3 +1,5 @@
+'use strict';
+
 var Future = require('../src/future').Future;
 var a = require('assert');
 
