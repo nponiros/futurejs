@@ -1,12 +1,12 @@
 {
   "author": "Nikolas Poniros <nikolas@poniros.de>",
   "name": "futurejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/nponiros/futurejs.git"
   },
-  "main": "future.js",
+  "main": "src/future.js",
   "licenses" : [
     {
         "type": "MIT",
