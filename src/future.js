@@ -6,10 +6,11 @@ var Future = function() {
 
     return this;
 };
-//TODO: cleanup after resolve/reject (pointers)
+
 Future.prototype.then = function(cb) {
     if (this.resolved) {
         cb.apply(undefined, this.args);
+	    this.args = undefined;
     } else {
         this.resolver = cb;
     }
@@ -22,6 +23,7 @@ Future.prototype.resolve = function() {
     } else {
         if (typeof this.resolver !== 'undefined') {
             this.resolver.apply(undefined, arguments);
+	        this.resolver = undefined;
             this.resolved = true;
         } else {
             this.resolved = true;
@@ -33,6 +35,7 @@ Future.prototype.resolve = function() {
 Future.prototype.error = function(cb) {
     if (this.rejected) {
         cb.apply(undefined, this.args);
+	    this.args = undefined;
     } else {
         this.rejector = cb;
     }
@@ -45,6 +48,7 @@ Future.prototype.reject = function() {
     } else {
         if (typeof this.rejector !== 'undefined') {
             this.rejector.apply(undefined, arguments);
+	        this.rejector = undefined;
             this.rejected = true;
         } else {
             this.rejected = true;
