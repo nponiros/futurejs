@@ -27,7 +27,7 @@ Future.prototype.resolve = function() {
             this.resolved = true;
         } else {
             this.resolved = true;
-            this.args = arguments;
+            this.args = Array.prototype.splice.call(arguments, 0);
         }
     }
 };
@@ -52,7 +52,7 @@ Future.prototype.reject = function() {
             this.rejected = true;
         } else {
             this.rejected = true;
-            this.args = arguments;
+            this.args = Array.prototype.splice.call(arguments, 0);
         }
     }
 };
