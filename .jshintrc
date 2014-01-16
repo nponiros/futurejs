@@ -1,0 +1,22 @@
+{
+  "devel": true,
+  "smarttabs": true,
+  "forin": true,
+  "immed": true,
+  "bitwise": true,
+  "quotmark": "single",
+  "eqnull": true,
+  "undef": true,
+  "noarg": true,
+  "curly": true,
+  "eqeqeq": true,
+  "latedef": true,
+  "newcap": true,
+  "nonew": true,
+  "globalstrict": true,
+  "node": true,
+  "globals": {
+    "describe": true,
+	"it": true
+  }
+}
